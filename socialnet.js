@@ -21,8 +21,6 @@
 	});
 
 	account_list.on("click",".btn",function(){
-		var o = $(this);
-		o.siblings().removeClass("active");
-		o.addClass("active");
+		
 	}); 
 })();
