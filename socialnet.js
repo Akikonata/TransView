@@ -4,7 +4,7 @@
 	var weibo_pane = $("#weibo-pane");
 	var weibo_list = weibo_pane.find(".weibo-list");
 	var timeline_select = $("#timeline-select");
-	var startTime = Math.round(Date.parse(0)/1000);
+	var startTime = 946656000;
 	var endTime = Math.round(Date.parse(new Date())/1000);
   var d_conf = {network_id:network_id,group_id:group_id,start_time:startTime,end_time:endTime}; 
   var permission_tpl = $($("#tpl-permission").html());
@@ -99,7 +99,6 @@
             }
           );
           weibo_list.append(_tmp);
-          alert(_tmp);
         });
         $("a[data-toggle='tooltip']").tooltip();
       });
