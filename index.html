@@ -9,6 +9,7 @@
     <link type="text/css" rel="stylesheet" href="font-awesome/css/font-awesome.min.css"/>
     <link type="text/css" rel="stylesheet" href="styles.css">
     <link type="text/css" rel="stylesheet" href="statuses.css">
+    <link type="text/css" rel="stylesheet" href="jquery.travelpath.css">
     <title>TransView</title>
   </head>
   <body>
@@ -39,7 +40,28 @@
     <div class="content">
       <select id="status-select"></select>
       <div id="trans-detail">
-
+        <div class="tabbable">
+          <ul class="nav nav-tabs widget-title" id="func-tabs">
+            <li class="active"><a href="#transmission" data-toggle="tab">传播分析</a></li>
+            <li><a href="#analysis" data-toggle="tab">用户分析</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="transmission">
+              <div class="btn title">传播分析</div>
+              <div id="travel-path" class="travel-path" style="overflow:hidden">
+                <canvas class="canvas-bg"></canvas>
+                <canvas class="canvas-lines"></canvas>
+                <canvas class="canvas-points"></canvas>
+                <canvas class="canvas-highlight"></canvas>
+                <div class="label-points" id="label-points"></div>
+                <div class="label-highlight" id="label-highlight"></div>
+                <div class="loading" id="loading">loading data...</div>
+              </div>
+            </div>
+            <div class="tab-pane" id="analysis">
+            </div>
+          </div>
+        </div> 
       </div>
     </div>
   </div>
@@ -198,6 +220,17 @@
     <div class="assign">true</div>
   </div>
 </script> 
+<script type="text/template" id="travelpath-tpl">
+  <div id="travel-path" class="travel-path" style="overflow:hidden">
+    <canvas class="canvas-bg"></canvas>
+    <canvas class="canvas-lines"></canvas>
+    <canvas class="canvas-points"></canvas>
+    <canvas class="canvas-highlight"></canvas>
+    <div class="label-points" id="label-points"></div>
+    <div class="label-highlight" id="label-highlight"></div>
+    <div class="loading" id="loading">loading data...</div>
+  </div>
+</script>
   <script>
     var network_id = "512b3960b1894c461507d1ec";
     var openname = "liz.lihs@gmail.com";
@@ -206,6 +239,7 @@
     var serverHost = "http://116.213.213.93:8080/social_api"
   </script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script type="text/javascript" src="jquery.travelpath.js"></script>
   <script type="text/javascript" src="highcharts.js"></script>
   <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="underscore.js"></script>

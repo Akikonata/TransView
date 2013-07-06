@@ -87,6 +87,9 @@
       cb
     );
   }
+  CRMModel.getMNTransmission = function(w_id,cb){
+    $.getJSON(serverHost+"/pathmap/"+w_id+"?with_level=true",cb);
+  }
   _root.CRMModel = CRMModel;
   this.CRM_Status = CRM_Status;
 })(window);

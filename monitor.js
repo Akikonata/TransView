@@ -49,8 +49,13 @@
             }
           );
       trans_detail.find(".Status-single").remove();
-      trans_detail.append(_tmp);
+      trans_detail.prepend(_tmp);
       $("a[data-toggle='tooltip']").tooltip();
+    });
+    CRMModel.getMNTransmission(weibo_id,function(data){
+      $("#travel-path").replaceWith($("#travelpath-tpl").html());
+      var travel_map = $("#travel-path");
+      travel_map.drawTravelPath(data);
     });
   });
 })();
