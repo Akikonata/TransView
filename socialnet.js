@@ -119,7 +119,9 @@
 	}); 
 	return_aclist.on("click",this,function(){
 		account_pane.slideDown();
-		weibo_pane.slideUp();
+		weibo_pane.slideUp(function(){
+			account_list.find(".active").removeClass("active");
+		});
 	});
 	weibo_list.on("click",".loadmore",function(){
 		d_conf.page++;
