@@ -1,8 +1,10 @@
 .Status-single,.S-interact {margin: 0 20px; padding:20px 0;border-bottom:1px dotted #e6e6e6;}
 .S-interact{border-top: 1px solid #CCC}
-.Status-single .S-face{float: left;width: 50px;border-radius: 2px;overflow: hidden;text-align: center;}
-.Status-single .S-face .badge{ margin-top: 10px;}
-.Status-single .S-detail{margin-left: 65px;min-height: 65px;}
+.Status-single .S-face{float: left;width: 4em;border-radius: 2px;overflow: hidden;text-align: center;}
+.Status-single .S-face img{width: 4em;height: 4em;}
+.Status-single .S-face .badge{ margin-top: 0.5em;}
+.Status-single .S-detail{margin-left: 5em;min-height: 5em;}
+.Status-single .S-detail .U-info a{font-size: 2em}
 .Status-single .S-detail ul.log-list{margin: 10px 0 0 0}
 .Status-single .S-text{font-size: 2em;line-height: 2em;padding:4px 0;}
 .Status-single .S-pic{margin:4px 0;}
@@ -14,8 +16,8 @@
 .Status-single .icon.vlady{background-position: -300px -150px; vertical-align: text-bottom; width: 16px;height: 13px;}
 .Status-single .icon.club{background-position: -300px -125px; vertical-align: text-bottom; width: 13px;height: 14px;}
 .Status-single .icon.none{background-image:none;}
-.Status-single .icon-sina{background: url(icon40_sina.png); width: 16px; height:16px; vertical-align: middle;}
-.Status-single .icon-tencent{background: url(icon40_tencent.png); width: 16px; height:16px;vertical-align: middle;}
+.Status-single .icon-sina{background: url(icon40_sina.png); width: 40px; height:40px; vertical-align: middle;}
+.Status-single .icon-tencent{background: url(icon40_tencent.png); width: 40px; height:40px;vertical-align: middle;}
 .Status-single .S-isdeal{padding-left: 30px;}
 .Status-single .S-txt1{color:#808080;}
 .Status-single .S-txt2{color:#aeaeae; margin: 0 10px 0 3px;}
