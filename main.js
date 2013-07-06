@@ -1,6 +1,11 @@
 (function(){
   var _root = this; 
-  var nav_bar = $("#nav-bar");
+  var nav_bar = $(".bottom-bar");
+  nav_bar.on("click","li",function(){
+    var o = $(this);
+    o.siblings().removeClass("active");
+    o.addClass("active");
+  });
   var CRMModel = {};
   CRMModel.getSNAccounts = function(cb){
     $.getJSON(serverHost+"/social_network/account_settings/get/",
