@@ -1,4 +1,5 @@
 (function(){
+	var return_aclist = $("#return-aclist");
 	var account_list = $("#account-list"); 
 	var account_pane = $("#account-pane");
 	var weibo_pane = $("#weibo-pane");
@@ -116,7 +117,10 @@
 		weibo_pane.slideDown();
 		timeline_select.trigger("change");
 	}); 
-
+	return_aclist.on("click",this,function(){
+		account_pane.slideDown();
+		weibo_pane.slideUp();
+	});
 	weibo_list.on("click",".loadmore",function(){
 		d_conf.page++;
 		get_weibo();

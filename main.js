@@ -50,6 +50,9 @@
     var o = $(this);
     o.siblings().removeClass("active");
     o.addClass("active");
+    $(".pane").hide();
+    var pane = o.find("a").data("pane");
+    $("#pane-"+pane).show();
   });
   var CRMModel = {};
   $("body").ajaxStart(function(){
@@ -63,15 +66,18 @@
     $("#page_mask").modal("hide");
   });
   CRMModel.getSNAccounts = function(cb){
-    $.getJSON(serverHost+"/social_network/account_settings/get/",
+    $.getJSON(serverHost + "/social_network/account_settings/get/",
       {user_id:openname,group_id:group_id},
       cb);
   }
   CRMModel.getSNWeiboList = function(timeline,config,cb){
-    $.getJSON(serverHost+sn_timeline_urls[timeline],
+    $.getJSON(serverHost + sn_timeline_urls[timeline],
       config,
       cb);
   }
+  // CRMModel.getMNWeibo = function(){
+  //   $.getJSON(serverHost + )
+  // }
   _root.CRMModel = CRMModel;
   this.CRM_Status = CRM_Status;
 })(window);

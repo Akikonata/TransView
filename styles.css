@@ -1,5 +1,5 @@
 body{margin:0 auto;overflow-x:hidden}
-.content{padding-bottom: 100px;}
+.content{padding-bottom: 100px; position: relative;}
 ul#account-list{margin: 0; padding: 0;}
 ul#account-list li.btn{;display: list-item; text-align: left; list-style: none;font-size: 3em;width: 100%;height:5em; line-height: 5em;border-radius: 0;padding: 0}
 ul#account-list li.btn.title{text-align: center;}
@@ -13,4 +13,6 @@ ul#account-list li img.avatar{width: 3em;height: 3em; margin-left: 1em}
 .bottom-bar ul{list-style: none;}
 .bottom-bar ul li{display: inline-block; line-height: 10px; padding: 0 10px}
 .bottom-bar ul li a{color: black;font-size: 2em; line-height: 100px;}
-.bottom-bar ul li a:hover{color: white;text-shadow:0 0 10px white; text-decoration: none;};
+.bottom-bar ul li a:hover{color: white;text-shadow:0 0 10px white; text-decoration: none;}
+#return-aclist{font-size:2em;width:2em;background: #819d51; position:fixed; bottom:120px;right:-5px;; padding:20px;border-radius:5px;}
+#return-aclist:hover{color: white}
