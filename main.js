@@ -75,9 +75,30 @@
       config,
       cb);
   }
-  // CRMModel.getMNWeibo = function(){
-  //   $.getJSON(serverHost + )
+  // var get_weibo_list = function(){
+  //   var sl = $("#statuses-list");
+  //   $.ajax({
+  //     dataType:"json",
+      
+  //     url:serverHost + "social_api/influence/statuses/list_group?group_id=" + group_id,
+  //     cache:false,
+  //     success:function(data){
+  //       var data_list = data.data_list;
+  //       sl.empty();
+  //       data_list.forEach(function(o){
+  //         sl.append("<option value='"+o.status_id+"'>"+o.status_name+"</option>");
+  //       });
+  //       get_weibo_detail();
+  //       get_weibo_feedback("reposts",1,10);
+  //     }
+  //   });
   // }
+  CRMModel.getMNWeibo = function(cb){
+    $.getJSON(serverHost + "/influence/statuses/list_group",
+        {group_id:group_id},
+        cb
+      );
+  }
   _root.CRMModel = CRMModel;
   this.CRM_Status = CRM_Status;
 })(window);
