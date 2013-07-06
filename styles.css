@@ -2,15 +2,18 @@ body{
   width:640px;
   margin:0 auto;
 }
+ul#account-list li.btn{display: list-item; text-align: left; list-style: none;margin-bottom: 10px;}
 .bottom-bar{
   background: #819d51;
-  height:40px;
+  height:100px;
   position: fixed;
-  bottom: 0px;
+  bottom: 0;
+  left: 0;
   width: 100%;
   box-shadow: -10px 0 5px black;
 }
+.bottom-bar [class^="icon-"], .bottom-bar [class*="icon-"]{margin-top: 10px; margin-right: 10px;}
 .bottom-bar ul{list-style: none;}
-.bottom-bar ul li{display: inline-block; line-height: 40px;}
-.bottom-bar ul li a{color: black;}
-.bottom-bar ul li a:hover{color: white;text-shadow:0 0 10px white; text-align: none};
+.bottom-bar ul li{display: inline-block; line-height: 10px;}
+.bottom-bar ul li a{color: black;font-size: 2em; line-height: 100px;}
+.bottom-bar ul li a:hover{color: white;text-shadow:0 0 10px white; text-decoration: none;};
