@@ -17,7 +17,7 @@
                       "<span>" + o.screen_name + "</span>"+
                       "<img src='icon40_" + o.platform + ".png' class='platform-icon'/>"+
                    "</li>";
-            account_list.prepend($(_tmp));
+            account_list.append($(_tmp));
 		});
 	});
 
