@@ -8,6 +8,7 @@
     <link type="text/css" rel="stylesheet" href="bootstrap/css/bootstrap.min.css"/>
     <link type="text/css" rel="stylesheet" href="font-awesome/css/font-awesome.min.css"/>
     <link type="text/css" rel="stylesheet" href="styles.css">
+    <link type="text/css" rel="stylesheet" href="status.css">
     <title>TransView</title>
   </head>
   <body>
@@ -16,7 +17,21 @@
       <li class="btn title"><i class="icon-group"></i>账号列表</li>
     </ul>
   </div> 
-  <div class="content" id="weibo-pane"></div>
+  <div class="content" id="weibo-pane" style="display:none">
+  <div class="btn title">
+    <select id="timeline-select">
+      <option value="home_statuses">我的首页</option>
+      <option value="mention_statuses">@我的微博</option>
+      <option value="mentions_in_comments">@我的评论</option>
+      <option value="comments_to_me">收到的评论</option>
+      <option value="accounts_statuses">发布的微博</option>
+      <option value="comments_by_me">发出的评论</option>
+    </select>
+  </div>
+  <div class="weibo-list">
+
+  </div>
+  </div>
    <div class="bottom-bar">
     <ul>
       <li class="active">
