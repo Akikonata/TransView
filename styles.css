@@ -14,5 +14,5 @@ ul#account-list li img.avatar{width: 3em;height: 3em; margin-left: 1em}
 .bottom-bar ul li{display: inline-block; line-height: 10px; padding: 0 10px}
 .bottom-bar ul li a{color: black;font-size: 2em; line-height: 100px;}
 .bottom-bar ul li a:hover{color: white;text-shadow:0 0 10px white; text-decoration: none;}
-#return-aclist{font-size:2em;width:2em;background: #819d51; position:fixed; bottom:120px;right:-5px;; padding:20px;border-radius:5px;}
+#return-aclist{font-size:3em;position:fixed; bottom:0;right:1em; padding:0 20px;z-index: 2; height: 100px;line-height: 100px;}
 #return-aclist:hover{color: white}
