@@ -1,3 +1,5 @@
 body{
   width:100%;
 }
+.navbar .nav{float:none;}
+.nav li{width:30%;}
