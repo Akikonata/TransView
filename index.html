@@ -40,4 +40,157 @@
   <script type="text/javascript" src="underscore.js"></script>
   <script src="main.js"></script>
   <script src="socialnet.js"></script>
+<script type="text/template" id="Tmp-status">
+  <div class="Status-single" is-comment="<%= is_comment %>" data-id="<%= id %>" data-platform="<%= platform %>" action-source = "<%= action_source %>" data-type="<%= data_type %>" action-send-id="<%= action_send_id %>">
+    <div class="S-face">
+      <a href="<%= u_link %>" target="_blank">
+        <img src="<%= u_avatar %>"></img>
+      </a>
+      <% if (pan) { 
+        if (pan.val > 0) { %>
+          <span class="badge badge-success">正面</span>
+        <% } else if (pan.val < 0) { %>
+          <span class="badge badge-important">负面</span>
+        <% } else { %>
+          <span class="badge badge-info">中性</span>
+        <% } 
+      } %>
+    </div>
+    <div class="S-detail">
+      <div class="U-info" data-id = "<%= u_id %>">
+        <a href="<%= u_link %>" target="_blank"><%= u_name %></a>
+        <a><i class="icon <%= CRM_Status.verify_map[u_verify] %>"></i></a>
+        <a>
+          <% if (platform === "sina") { %>
+            <i class="icon icon-sina"></i>
+          <% } %>
+          <% if (platform === "tencent") { %>
+            <i class="icon icon-tencent"></i>
+          <% } %>
+        </a>
+      </div>
+      <div class="S-text"><%= s_text %></div>
+      <% if (s_pic) { %>
+      <div class="S-pic">
+        <img src="<%= s_pic %>"></img>
+      </div>
+      <% } %>
+      <% if (repost_block) { %>
+      <div class="U-media-expand well" data-id="<%= repost_block.id %>">
+        <div class="U-info">
+          <a href="<%= repost_block.u_link %>" target="_blank"><%= repost_block.u_name %></a>
+        </div>
+        <div class="S-text"><%= repost_block.s_text %></div>
+        <% if (repost_block.s_pic) { %>
+          <div class="S-pic">
+            <img src="<%= repost_block.s_pic %>"></img>
+          </div>
+        <% } %>
+        <div class="S-func">
+          <a target="_blank" href="<%= repost_block.s_link %>" class="S-time"><%= repost_block.c_date %></a>
+          <span class="S-txt1">来自</span>
+          <%= repost_block.s_source %>
+        </div>
+      </div>
+      <% } %>
+      <div class="S-func clearfix">
+        <a target="_blank" href="<%= (function(){ if (is_comment) { return repost_block.s_link } else { return s_link }})() %>" class="S-time origin">
+          <%= c_date %>
+        </a>
+        <span class="S-txt1">来自</span>
+        <%= s_source %>
+        <span class="S-isdeal">
+        <% if (is_deal === "completed") { %>
+          <i class='icon-ok'></i><span class="S-txt2">已处理</span>
+        <% } %>
+        <% if (is_deal === "waiting") { %>
+          <i class='icon-time'></i><span class="S-txt2">待处理</span>
+        <% } %>
+        </span>
+        <div class="pull-right">
+        <% if (func_config.flash!== undefined) { %>
+          <a class="unuse" href="javascript:void(0)" data-toggle="tooltip" title="曝光"><i class="icon-rss"></i><span class="S-txt2">(<%= Math.ceil(func_config.flash) %>)</span></a>
+        <% } %>
+        <% if (func_config.eyeball!== undefined) { %>
+          <a class="unuse" href="javascript:void(0)" data-toggle="tooltip" title="眼球"><i class="icon-eye-open"></i><span class="S-txt2">(<%= Math.ceil(func_config.eyeball) %>)</span></a>
+        <% } %>
+        
+        <% if (func_config.comment) { %>
+          <a href="javascript:void(0)" data-toggle="tooltip" 
+            <% if (func_config.comment.func) { %>
+              data-action="comment"
+            <% } %>
+          title="评论">
+            <i class="icon-comments"></i>
+            <span class="S-txt2">
+              <% if (func_config.comment.count!== undefined) { %>
+                (<%= func_config.comment.count %>)
+              <% } %>
+            </span>
+          </a>
+        <% } %>
+
+        <% if (func_config.repost) { %>
+          <a href="javascript:void(0)" data-toggle="tooltip" 
+            <% if (func_config.repost.func) { %>
+              data-action="repost"
+            <% } %>
+            <% if (repost_block) { %>
+              data-copy="on"
+            <% } %>
+          title="转发">
+            <i class="icon-retweet"></i>
+            <span class="S-txt2">
+            <% if (func_config.repost.count!== undefined) { %>
+              (<%= func_config.repost.count %>)
+            <% } %>
+            </span>
+          </a>
+        <% } %>
+        <% if (func_config.monitor) { %>
+          <a href="javascript:void(0)" data-toggle="tooltip" 
+          <% if (!func_config.monitor.state) { %>
+            data-action="monitor" 
+          <% } %>
+            title="监控"><i class="icon-flag"></i><span class="S-txt2">
+            <% if (func_config.monitor.state) { %>
+              (已监控)
+            <% } %>
+            </span></a>
+        <% } %>
+        <% if (func_config.assign) { %>
+          <a href="javascript:void(0)" data-toggle="tooltip" data-action="create" title="指派"><i class="icon-hand-right"></i><span class="S-txt2"></span></a>
+        <% } %>
+        </div>
+        <% if (logs && logs.length !== 0 ) { %>
+          <ul class="alert log-list">
+            <% logs.forEach(function(log){ %>
+              <li>
+                <% if (log.rule_info) { %>
+                  <%= log.rule_info %>
+                <% } else if (log.user_inf) { %>
+                  <%= log.user_inf[1] %>
+                  （<%= log.user_inf[0] %>）
+                <% } %>
+                于 
+                <%= log.created_at %>
+                <% if (log.from_inf){ %>
+                  从 
+                  <%= log.from_inf[1] %>
+                  <%= log.from_inf[0] %>
+                <% } %>
+                <% if (log.to_inf) {%>
+                  指派给
+                  <%= log.to_inf[1] %>
+                  （<%= log.to_inf[0] %>）
+                <% } %>
+              </li>
+            <% }); %>
+          </ul>
+        <% } %>
+      </div>
+      <div class="form-container"></div>
+    </div>
+  </div>
+</script>
 </html>
