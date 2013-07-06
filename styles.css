@@ -16,3 +16,4 @@ ul#account-list li img.avatar{width: 3em;height: 3em; margin-left: 1em}
 .bottom-bar ul li a:hover{color: white;text-shadow:0 0 10px white; text-decoration: none;}
 #return-aclist{font-size:3em;position:fixed; bottom:0;right:1em; padding:0 20px;z-index: 2; height: 100px;line-height: 100px;}
 #return-aclist:hover{color: white}
+.tooltip{font-size: 3em}
