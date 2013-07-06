@@ -52,6 +52,16 @@
     o.addClass("active");
   });
   var CRMModel = {};
+  $("body").ajaxStart(function(){
+    $("#page_mask").modal({
+      backdrop:"static",
+      keyboard:false,
+      show:true
+    });
+  });
+  $("body").ajaxStop(function(){
+    $("#page_mask").modal("hide");
+  });
   CRMModel.getSNAccounts = function(cb){
     $.getJSON(serverHost+"/social_network/account_settings/get/",
       {user_id:openname,group_id:group_id},
