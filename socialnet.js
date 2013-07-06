@@ -99,6 +99,7 @@
             }
           );
           weibo_list.append(_tmp);
+          alert(_tmp);
         });
         $("a[data-toggle='tooltip']").tooltip();
       });
