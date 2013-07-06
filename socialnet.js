@@ -6,7 +6,8 @@
 	var timeline_select = $("#timeline-select");
 	var startTime = 946656000;
 	var endTime = Math.round(Date.parse(new Date())/1000);
-  var d_conf = {network_id:network_id,group_id:group_id,start_time:startTime,end_time:endTime}; 
+  var d_conf = {network_id:network_id,group_id:group_id,start_time:startTime,end_time:endTime,page:1,per_page:20}; 
+  var timeline = null;
   var permission_tpl = $($("#tpl-permission").html());
   var permission = {
     monitor:permission_tpl.find(".monitor").text()==="true"?true:false,
@@ -25,13 +26,10 @@
             account_list.append($(_tmp));
 		});
 	});
-
-	//时间线选择器变化时候获取相应微博
-	timeline_select.on("change",this,function(){
-		var o = $(this);  
-		var timeline = o.val();
+	var get_weibo = function(clear){
 		CRMModel.getSNWeiboList(timeline,d_conf,function(data){
-				weibo_list.empty();
+				if(clear)weibo_list.empty();
+				else{weibo_list.find(".loadmore").remove();}
         console.log(data);
         var is_comment = (timeline.indexOf("comments") > -1),
             is_accounts_statuses = (timeline.indexOf("accounts_statuses")>-1),
@@ -97,8 +95,15 @@
           );
           weibo_list.append(_tmp);
         });
+				weibo_list.append("<div class='S-interact loadmore'><a href='javascript:void(0)'>加载更多</a></div>")
         $("a[data-toggle='tooltip']").tooltip();
       });
+	}  
+	//时间线选择器变化时候获取相应微博
+	timeline_select.on("change",this,function(){
+		var o = $(this);  
+		timeline = o.val();
+		get_weibo(true);
 	});
 	//触发获取微博的事件
 	account_list.on("click",".btn",function(){
@@ -111,4 +116,9 @@
 		weibo_pane.slideDown();
 		timeline_select.trigger("change");
 	}); 
+
+	weibo_list.on("click",".loadmore",function(){
+		d_conf.page++;
+		get_weibo();
+	});
 })();

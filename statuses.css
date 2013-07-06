@@ -1,4 +1,5 @@
 .Status-single,.S-interact {margin: 0 20px; padding:20px 0;border-bottom:1px dotted #e6e6e6;}
+.S-interact.loadmore{text-align: center; font-size: 3em; padding: 1em}
 .S-interact{border-top: 1px solid #CCC}
 .Status-single .S-face{float: left;width: 4em;border-radius: 2px;overflow: hidden;text-align: center;}
 .Status-single .S-face img{width: 4em;height: 4em;}
