@@ -53,6 +53,7 @@
     $(".pane").hide();
     var pane = o.find("a").data("pane");
     $("#pane-"+pane).show();
+    if(pane==="monitor"){$("#status-select").trigger("change")}
   });
   var CRMModel = {};
   $("body").ajaxStart(function(){
@@ -75,29 +76,16 @@
       config,
       cb);
   }
-  // var get_weibo_list = function(){
-  //   var sl = $("#statuses-list");
-  //   $.ajax({
-  //     dataType:"json",
-      
-  //     url:serverHost + "social_api/influence/statuses/list_group?group_id=" + group_id,
-  //     cache:false,
-  //     success:function(data){
-  //       var data_list = data.data_list;
-  //       sl.empty();
-  //       data_list.forEach(function(o){
-  //         sl.append("<option value='"+o.status_id+"'>"+o.status_name+"</option>");
-  //       });
-  //       get_weibo_detail();
-  //       get_weibo_feedback("reposts",1,10);
-  //     }
-  //   });
-  // }
   CRMModel.getMNWeibo = function(cb){
     $.getJSON(serverHost + "/influence/statuses/list_group",
         {group_id:group_id},
         cb
       );
+  }
+  CRMModel.getMNWeiboDetail = function(w_id,cb){
+    $.getJSON(serverHost+"/influence/statuses/"+w_id,
+      cb
+    );
   }
   _root.CRMModel = CRMModel;
   this.CRM_Status = CRM_Status;
