@@ -1,7 +1,8 @@
 body{margin:0 auto;}
-ul#account-list li.btn{display: list-item; text-align: left; list-style: none;font-size: 3em;width: 100%;height:5em;}
+ul#account-list li.btn{display: list-item; text-align: left; list-style: none;font-size: 3em;width: 100%;height:5em; line-height: 5em}
 .bottom-bar{background: #819d51;height:100px;position: fixed;bottom: 0;left: 0;width: 100%;box-shadow: -10px 0 5px black;}
-img.platform-icon{float: right;}
+ul#account-list li img.platform-icon{float: right;}
+ul#account-list li img.avatar{width: 4em;height: 4em}
 .bottom-bar [class^="icon-"], .bottom-bar [class*="icon-"]{margin-top: 10px; margin-right: 10px;}
 .bottom-bar ul{list-style: none;}
 .bottom-bar ul li{display: inline-block; line-height: 10px;}
