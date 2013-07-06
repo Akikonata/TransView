@@ -31,6 +31,7 @@
 		var o = $(this);  
 		var timeline = o.val();
 		CRMModel.getSNWeiboList(timeline,d_conf,function(data){
+				weibo_list.empty();
         console.log(data);
         var is_comment = (timeline.indexOf("comments") > -1),
             is_accounts_statuses = (timeline.indexOf("accounts_statuses")>-1),
