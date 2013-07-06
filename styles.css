@@ -1,6 +1,7 @@
 body{
   width:640px;
   margin:0 auto;
+  font-size: 2em;
 }
 ul#account-list li.btn{display: list-item; text-align: left; list-style: none;margin-bottom: 10px;}
 .bottom-bar{
