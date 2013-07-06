@@ -9,7 +9,7 @@
 .Status-single .S-text{font-size: 2em;line-height: 2em;padding:4px 0;}
 .Status-single .S-pic{margin:4px 0;}
 .Status-single .S-time{margin: 0 7px 0 0;}
-.Status-single .U-media-expand,.Status-single .U-media-expand .S-text{color:#333; font-size: 1.5em; line-height: 1.5em}
+.Status-single .U-media-expand,.Status-single .U-media-expand .U-info a,.Status-single .U-media-expand .S-text{color:#333; font-size: 1.5em; line-height: 1.5em}
 .Status-single .icon{background-image:url(/sm_media/images/icon_sina.png);margin-left: 2px; display: inline-block;}
 .Status-single .icon.approve{background-position: -300px -50px; vertical-align: text-bottom; width: 16px;height: 14px;}
 .Status-single .icon.approveco{background-position: -300px -75px; vertical-align: text-bottom; width: 16px;height: 14px;}
