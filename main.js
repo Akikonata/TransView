@@ -1,7 +1,7 @@
 (function(){
   var _root = this; 
-  var nav_bar = $(".bottom-bar");
-  nav_bar.on("click","li",function(){
+  var bottom_bar = $(".bottom-bar");
+  bottom_bar.on("click","li",function(){
     var o = $(this);
     o.siblings().removeClass("active");
     o.addClass("active");
