@@ -12,24 +12,30 @@
     <title>TransView</title>
   </head>
   <body>
+  <div id="pane-socialnet" class="pane">
+    <div class="content" id="account-pane">
+      <ul id="account-list">
+        <li class="btn title"><i class="icon-group"></i>账号列表</li>
+      </ul>
+    </div> 
+    <div class="content" id="weibo-pane" style="display:none">
+      <select id="timeline-select">
+        <option value="home_statuses">我的首页</option>
+        <option value="mention_statuses">@我的微博</option>
+        <option value="mentions_in_comments">@我的评论</option>
+        <option value="comments_to_me">收到的评论</option>
+        <option value="accounts_statuses">发布的微博</option>
+        <option value="comments_by_me">发出的评论</option>
+      </select>
+      <div class="weibo-list">
 
-  <div class="content" id="account-pane">
-    <ul id="account-list">
-      <li class="btn title"><i class="icon-group"></i>账号列表</li>
-    </ul>
-  </div> 
-  <div class="content" id="weibo-pane" style="display:none">
-    <select id="timeline-select">
-      <option value="home_statuses">我的首页</option>
-      <option value="mention_statuses">@我的微博</option>
-      <option value="mentions_in_comments">@我的评论</option>
-      <option value="comments_to_me">收到的评论</option>
-      <option value="accounts_statuses">发布的微博</option>
-      <option value="comments_by_me">发出的评论</option>
-    </select>
-  <div class="weibo-list">
-
+      </div>
+    </div>
   </div>
+  <div id="pane-monitor" class="pane">
+    <div class="content">
+      <div></div>
+    </div>
   </div>
    <div class="bottom-bar">
     <ul>
@@ -199,4 +205,5 @@
   <script type="text/javascript" src="underscore.js"></script>
   <script src="main.js"></script>
   <script src="socialnet.js"></script>
+  <script src="monitor.js"></script>
 </html>
