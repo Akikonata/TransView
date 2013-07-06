@@ -12,6 +12,7 @@
     <title>TransView</title>
   </head>
   <body>
+
   <div class="content" id="account-pane">
     <ul id="account-list">
       <li class="btn title"><i class="icon-group"></i>账号列表</li>
@@ -171,34 +172,9 @@
           <a href="javascript:void(0)" data-toggle="tooltip" data-action="create" title="指派"><i class="icon-hand-right"></i><span class="S-txt2"></span></a>
         <% } %>
         </div>
-        <% if (logs && logs.length !== 0 ) { %>
-          <ul class="alert log-list">
-            <% logs.forEach(function(log){ %>
-              <li>
-                <% if (log.rule_info) { %>
-                  <%= log.rule_info %>
-                <% } else if (log.user_inf) { %>
-                  <%= log.user_inf[1] %>
-                  （<%= log.user_inf[0] %>）
-                <% } %>
-                于 
-                <%= log.created_at %>
-                <% if (log.from_inf){ %>
-                  从 
-                  <%= log.from_inf[1] %>
-                  <%= log.from_inf[0] %>
-                <% } %>
-                <% if (log.to_inf) {%>
-                  指派给
-                  <%= log.to_inf[1] %>
-                  （<%= log.to_inf[0] %>）
-                <% } %>
-              </li>
-            <% }); %>
-          </ul>
-        <% } %>
+        
       </div>
-      <div class="form-container"></div>
+      
     </div>
   </div>
 </script>
