@@ -7,6 +7,10 @@
       {user_id:openname,group_id:group_id},
       cb);
   }
-  
+  CRMModel.getSNWeiboList = function(config,cb){
+    $.getJSON(serverHost+"",
+      config,
+      cb);
+  }
   _root.CRMModel = CRMModel;
 })(window);
