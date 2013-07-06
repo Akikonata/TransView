@@ -67,10 +67,7 @@
               pan:null,
               logs:o.logs,
               func_config:{
-                monitor:(d_conf.platform!=="sina"||is_comment||o.retweet.id||!permission.monitor)?
-                        null:{
-                          state:o.is_monitor
-                        },
+                monitor:null,
                 flash:o.flash,
                 eyeball:o.eyeball,
                 comment:is_comments_by_me?
@@ -83,7 +80,7 @@
                           count:o.rcount,
                           func:permission.repost&&!o.is_deal
                         },
-                assign:permission.assign&&!o.is_deal&&!is_comments_by_me && !is_accounts_statuses
+                assign:null
               },
               repost_block:o.retweet.id?
                           {
