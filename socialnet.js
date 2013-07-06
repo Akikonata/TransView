@@ -1,5 +1,6 @@
 (function(){
 	var account_list = $("#account-list"); 
+	var account_pane = $("#account-pane");
 	var request_urls = {
     home_statuses:"/home_timeline/statuses/conditions/?",
     mention_statuses:"/mentions_in_statuses/conditions/?",
