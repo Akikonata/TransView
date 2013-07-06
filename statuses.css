@@ -21,6 +21,6 @@
 .Status-single .S-isdeal{padding-left: 30px;}
 .Status-single .S-txt1{color:#808080;}
 .Status-single .S-txt2{color:#aeaeae; margin: 0 10px 0 3px;}
-.Status-single .S-func a{color:#666;}
+.Status-single .S-func a{color:#666; font-size: 2em; line-height: 3em}
 .Status-single .S-func a:hover{color:black;}
 .Status-single .S-func a.unuse{color:#CCC;}
