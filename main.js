@@ -4,5 +4,10 @@
     var o = $(this);
     o.siblings().removeClass("active");
     o.addClass("active"); 
-  });    
+  });  
+
+  $("body").on("touchmove",this,function(){
+    e.stopPropagation();
+    e.preventDefault();
+  }); 
 })();
