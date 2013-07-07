@@ -58,49 +58,85 @@
       trans_detail.prepend(_tmp);
       $("a[data-toggle='tooltip']").tooltip();
 
-      //绘制传播图
-      var createDate = Date.parse(data.created_at);
       var hour_dist = data.user_dist.hour_dist;
-      var configTend ={
-                    colors: ['#1C77C1', '#E04200', '#FEB800', '#00A3E8', '#714286', '#EA5503'],
-                    chart: {
-                      zoomType: 'x',
-                      renderTo:'travel-tend'
-                    },
-                    title:{
-                      text:"",
-                    },
-                    series: [{
-                      name: '转发量',
-                      data: null,
-                    }],
-                    xAxis: {
-                      type: 'datetime',
-                      maxZoom: 24 * 3600 * 1000,
-                      title:{
-                        text:null,
-                        align:"left"
-                      }
-                    },
-                    yAxis: {
-                      title:"",
-                      min:0,
-                      margin:[0,0,0,-40]
-                    },
-                    exporting:{
-                      enabled: false
-                    },
-                    credits:{
-                      enabled:false
-                    }
-                };
-        var timeLocal = new Date().getTimezoneOffset() * 60 * 1000;
-        configTend.series[0].data = hour_dist; 
-        configTend.series[0].pointStart = createDate - timeLocal;
-        configTend.series[0].pointInterval = 3600 * 1000; // one hour
-        configTend.xAxis.title.text = "小时";
+        // for(var i = hour_dist.length-1; i>0; i--){
+        //   if(hour_dist[i]!=0){
+        //     hour_dist = hour_dist.slice(0,i+1);
+        //     break;
+        //   }
+        // }
+        T_dist_data.data_hour = hour_dist;
+        var source_dist = data.user_dist.source_dist;
+        var comment_hotwords = data.user_dist.comments_stat.hotwords;
+        var repost_hotwords = data.user_dist.reposts_stat.hotwords;
+        var comments_gender_dist = data.user_dist.comments_stat.gender_dist;
+        var comments_verify_dist = data.user_dist.comments_stat.verify_dist;
+        var comments_location_dist = data.user_dist.comments_stat.location_dist;
 
-        new Highcharts.Chart(configTend);
+        var reposts_gender_dist = data.user_dist.reposts_stat.gender_dist;
+        var reposts_verify_dist = data.user_dist.reposts_stat.verify_dist;
+        var reposts_location_dist = data.user_dist.reposts_stat.location_dist;
+
+        var createDate = Date.parse(data.created_at);
+        T_dist_data.created_at = createDate;
+
+        //compute T_dist_data.data_day
+        T_dist_data.data_day = [];
+        var dCount = 0;
+
+        var user = data.user;
+        reposts_count = data.reposts_count;
+        comments_count = data.comments_count;
+          
+          var column_Configs = {
+            colors: ['#FEB800', '#00A3E8', '#714286', '#EA5503'],
+            chart:{
+              type:"column",
+              renderTo:"",
+            },
+            title:{
+              text:"",
+            },
+            series: [],
+            xAxis: {
+              categories:[],
+              labels: {
+                align:"right",
+                rotation: -60
+              }
+            },
+            yAxis: {
+              title:"",
+              min:0
+            },
+            exporting:{
+              enabled: false
+            },
+            credits:{
+              enabled:false
+            }
+          }
+
+          //render source_tend
+          var source_dist = _.pairs(source_dist);
+              source_dist = _.sortBy(source_dist,function(o){return -o[1]});
+
+          var xAxis_source = [],yVal_source=[];
+
+          for(var cur = 0;cur<20;cur++){
+            if(source_dist[cur]){
+              xAxis_source.push(source_dist[cur][0]);
+              yVal_source.push(source_dist[cur][1]);
+            }
+            else break;
+          }
+
+          column_Configs.series.push({
+              name: "来源分布",
+              data: yVal_source
+          });
+          column_Configs.xAxis.categories = xAxis_source;
+          $("#source-tend").highcharts(column_Configs);
     });
 
     CRMModel.getMNTransmission(weibo_id,function(data){
