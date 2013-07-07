@@ -1,11 +1,11 @@
 body{margin:0 auto;overflow-x:hidden}
 .content{padding-bottom: 100px; position: relative;}
 ul#account-list{margin: 0; padding: 0;}
-ul#account-list li.btn{;display: list-item; text-align: left; list-style: none; width: 100%;border-radius: 0;padding: 0}
+ul#account-list li.btn{display: list-item; text-align: left; list-style: none; width: 100%;border-radius: 0;padding: 10px}
 ul#account-list li.btn.title{text-align: center;}
 .btn.title{text-align: center; background: black;color: white;border: none; width: 100%;border-radius: 0}
 select#timeline-select,select#status-select{width: 100%;margin: 0; padding: 0}
-ul#account-list li img.platform-icon{float: right;width: 2em;height: 2em; margin-top: 1em; margin-right: 1em}
+ul#account-list li img.platform-icon{float: right;width: 2em;height: 2em; margin-top: 1em; margin-right: 2em}
 ul#account-list li img.avatar{margin-left: 1em}
 .bottom-bar{z-index: 5;padding-left:0.5em;margin-left:0;background: #819d51;height:40px;position: fixed;bottom: 0;left: 0;width: 110%;box-shadow: -10px 0 20px black; border-left: 0.5em solid black}
 .bottom-bar li.active{background:#566935;}
