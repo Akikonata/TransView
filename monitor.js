@@ -93,6 +93,8 @@
             chart:{
               type:"column",
               renderTo:"",
+              width:document.width,
+              height 800
             },
             title:{
               text:"",
@@ -144,8 +146,8 @@
                 plotBackgroundColor: null,
                 plotBorderWidth: null,
                 plotShadow: false,
-                renderTo : "",
-                height:"400",
+                width:document.width,
+                height:800,
                 margin:[60,100,60,60]
             },
             title: {
@@ -190,6 +192,27 @@
           pie_Configs.series[0].data = _.pairs(comments_verify_dist);
           $("#comments-verify-dist").highcharts(pie_Configs);
 
+          comments_location_dist = _.pairs(comments_location_dist);
+          comments_location_dist = _.sortBy(comments_location_dist,function(o){return -o[1]});
+          var xAxis_loaction = [],
+              yVal_loaction = [];
+          for(var l = 0;l<comments_location_dist.length;l++){
+            xAxis_loaction.push(comments_location_dist[l][0]);
+            yVal_loaction.push(comments_location_dist[l][1]);
+          }
+
+          column_Configs.series = [];
+          column_Configs.series.push({
+              name: "地域分布",
+              data: yVal_loaction
+          });
+          column_Configs.xAxis.categories = xAxis_loaction;
+          $("#comments-location-dist").highcharts(column_Configs);
+
+          pie_Configs.series[0].data = [
+            ["男",comments_gender_dist["m"]],
+            ["女",comments_gender_dist["f"]]
+          ];
     });
 
     CRMModel.getMNTransmission(weibo_id,function(data){
