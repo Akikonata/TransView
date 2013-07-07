@@ -5,13 +5,13 @@ ul#account-list li.btn{display: list-item; text-align: left; list-style: none; w
 ul#account-list li.btn.title{text-align: center;}
 .btn.title{text-align: center; background: black;color: white;border: none; width: 100%;border-radius: 0}
 select#timeline-select,select#status-select{width: 100%;margin: 0; padding: 0}
-ul#account-list li img.platform-icon{float: right;width: 2em;height: 2em; margin-top: 1em; margin-right: 2em}
+ul#account-list li img.platform-icon{float: right;margin-top: 1em; margin-right: 2em}
 ul#account-list li img.avatar{margin-left: 1em}
 .bottom-bar{z-index: 5;padding-left:0.5em;margin-left:0;background: #819d51;height:40px;position: fixed;bottom: 0;left: 0;width: 110%;box-shadow: -10px 0 20px black; border-left: 0.5em solid black}
 .bottom-bar li.active{background:#566935;}
 .bottom-bar [class^="icon-"], .bottom-bar [class*="icon-"]{margin-top: 10px; margin-right: 10px;}
 .bottom-bar ul{list-style: none;}
-.bottom-bar ul li{display: inline-block; line-height: 10px; padding: 0 10px}
+.bottom-bar ul li{display: inline-block; padding: 0 10px}
 .bottom-bar ul li a{color: black;line-height: 40px;}
 .bottom-bar ul li a:hover{color: white;text-shadow:0 0 10px white; text-decoration: none;}
 #return-aclist{position:fixed; bottom:0;right:1em; padding:0 20px;z-index: 6; height: 40px;line-height: 40px;}
