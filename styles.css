@@ -1,4 +1,4 @@
-body{margin:0 auto;overflow-x:hidden;padding: 0}
+body,div,ul,li,p{margin:0 auto;padding: 0}
 .content{padding-bottom: 100px; position: relative;}
 ul#account-list{margin: 0; padding: 0;}
 ul#account-list li.btn{display: list-item; text-align: left; list-style: none; width: 100%;border-radius: 0;padding: 10px}
