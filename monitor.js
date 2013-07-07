@@ -106,16 +106,10 @@
                 align:"right",
                 rotation: -60
               },
-              style:{
-                fontSize:'3em'
-              }
             },
             yAxis: {
               title:"",
               min:0,
-              style:{
-                fontSize:'3em'
-              }
             },
             exporting:{
               enabled: false
@@ -174,9 +168,6 @@
                         connectorColor: '#000000',
                         formatter: function() {
                             return '<b>'+ this.point.name +'</b>: '+ this.percentage.toFixed(1) +' %';
-                        },
-                        style:{
-                          fontSize:'3em'
                         }
                     }
                 }
