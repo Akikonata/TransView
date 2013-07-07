@@ -1,7 +1,6 @@
 (function(){
   var status_select = $("#status-select");
   var trans_detail = $("#trans-detail");
-  alert("test");
   var T_dist_data = {
     created_at:null,
     data_hour:null,
