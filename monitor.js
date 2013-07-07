@@ -213,6 +213,31 @@
             ["男",comments_gender_dist["m"]],
             ["女",comments_gender_dist["f"]]
           ];
+
+          //render reposts_gender_dist
+          $("#reposts-gender-dist").highcharts(pie_Configs);
+          //render reposts_verify_dist
+          pie_Configs.series[0].data = _.pairs(reposts_verify_dist);
+          $("#reposts-verify-dist").highcharts(pie_Configs);
+
+          //render reposts_location_dist
+          var xAxis_location_r = [],
+              yVal_location_r = [];
+          reposts_location_dist = _.pairs(reposts_location_dist);
+          reposts_location_dist = _.sortBy(reposts_location_dist,function(o){return - o[1]});;
+          
+          for(var k = 0;k<reposts_location_dist.length;k++){
+            xAxis_location_r.push(reposts_location_dist[k][0]);
+            yVal_location_r.push(reposts_location_dist[k][1]);
+          }
+
+          column_Configs.series = [];
+          column_Configs.series.push({
+              name: "地域分布",
+              data: yVal_location_r
+          });
+          column_Configs.xAxis.categories = xAxis_location_r;
+          $("#reposts-location-dist").highcharts(column_Configs);
     });
 
     CRMModel.getMNTransmission(weibo_id,function(data){
