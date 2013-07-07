@@ -64,7 +64,8 @@
       var configTend ={
                     colors: ['#1C77C1', '#E04200', '#FEB800', '#00A3E8', '#714286', '#EA5503'],
                     chart: {
-                      zoomType: 'x'
+                      zoomType: 'x',
+                      renderTo:'travel-tend'
                     },
                     title:{
                       text:"",
@@ -99,7 +100,7 @@
         configTend.series[0].pointInterval = 3600 * 1000; // one hour
         configTend.xAxis.title.text = "小时";
 
-      $("#travel-tend").highcharts(configTend);
+        new Highcharts.Chart(configTend);
     });
 
     CRMModel.getMNTransmission(weibo_id,function(data){
