@@ -137,6 +137,59 @@
           });
           column_Configs.xAxis.categories = xAxis_source;
           $("#source-tend").highcharts(column_Configs);
+
+          var pie_Configs = {
+            colors: ['#4BAA00', '#1C77C1', '#E04200', '#FEB800', '#00A3E8', '#714286', '#EA5503'],
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                renderTo : "",
+                height:"400",
+                margin:[60,100,60,60]
+            },
+            title: {
+                text: ''
+            },
+            tooltip: {
+              pointFormat: '{series.name}: <b>{point.percentage}%</b>',
+              percentageDecimals: 1
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        color: '#000000',
+                        connectorColor: '#000000',
+                        formatter: function() {
+                            return '<b>'+ this.point.name +'</b>: '+ this.percentage.toFixed(1) +' %';
+                        }
+                    }
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: '比例',
+            }],
+            exporting:{
+              enabled: false
+            },
+            credits:{
+              enabled:false
+            }
+          }
+          //render comments_gender_dist
+          pie_Configs.series[0].data = [
+            ["男",comments_gender_dist["m"]],
+            ["女",comments_gender_dist["f"]]
+          ];
+          $("#comments-gender-dist").highcharts(pie_Configs);
+          //render comments_verify_dist
+          pie_Configs.series[0].data = _.pairs(comments_verify_dist);
+          $("#comments-verify-dist").highcharts(pie_Configs);
+
     });
 
     CRMModel.getMNTransmission(weibo_id,function(data){
