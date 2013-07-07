@@ -1,8 +1,9 @@
 .Status-single,.S-interact {margin: 0 20px; padding:20px 0;border-bottom:1px dotted #e6e6e6;}
 .S-interact{border-top: 1px solid #CCC}
-.Status-single .S-face{float: left;width: 50px;border-radius: 2px;overflow: hidden;text-align: center;}
+.Status-single .S-face{float: left;width: 35px;border-radius: 2px;overflow: hidden;text-align: center;}
+.Status-single .S-face img{width: 30px;height: 30px;}
 .Status-single .S-face .badge{ margin-top: 10px;}
-.Status-single .S-detail{margin-left: 65px;min-height: 65px;}
+.Status-single .S-detail{margin-left: 35px;min-height: 65px;}
 .Status-single .S-detail ul.log-list{margin: 10px 0 0 0}
 .Status-single .S-text{font-size: 14px;line-height: 23px;padding:4px 0;}
 .Status-single .S-pic{margin:4px 0;}
