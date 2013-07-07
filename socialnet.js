@@ -22,7 +22,7 @@
 			var _tmp = "<li class='btn account' data-id='" + o._id + "' data-platform='"+o.platform+"'>"+
                       "<img class='avatar' src ='" + o.profile_image_url + "'/>"+
                       "<span>" + o.screen_name + "</span>"+
-                      "<img src='icon40_" + o.platform + ".png' class='platform-icon'/>"+
+                      "<img src='icon16_" + o.platform + ".png' class='platform-icon'/>"+
                    "</li>";
             account_list.append($(_tmp));
 		});

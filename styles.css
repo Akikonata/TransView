@@ -5,7 +5,7 @@ ul#account-list li.btn{display: list-item; text-align: left; list-style: none; w
 ul#account-list li.btn.title{text-align: center;}
 .btn.title{text-align: center; background: black;color: white;border: none; width: 100%;border-radius: 0}
 select#timeline-select,select#status-select{width: 100%;margin: 0; padding: 0}
-ul#account-list li img.platform-icon{float: right;margin-top: 1em; margin-right: 2em}
+ul#account-list li img.platform-icon{float: right; margin-right: 2em}
 ul#account-list li img.avatar{margin-left: 1em}
 .bottom-bar{z-index: 5;margin-left:0;background: #819d51;height:40px;position: fixed;bottom: 0;left: 0;width: 100%;box-shadow: 0 0 5px black; border-left: 0.5em solid black}
 .bottom-bar li.active{background:#566935;}
