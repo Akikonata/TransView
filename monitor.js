@@ -94,7 +94,7 @@
               type:"column",
               renderTo:"",
               width:document.width,
-              height: 800
+              height: 400
             },
             title:{
               text:"",
@@ -147,7 +147,7 @@
                 plotBorderWidth: null,
                 plotShadow: false,
                 width:document.width,
-                height:800,
+                height:400,
                 margin:[60,100,60,60]
             },
             title: {
