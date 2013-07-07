@@ -94,7 +94,7 @@
               type:"column",
               renderTo:"",
               width:document.width,
-              height 800
+              height: 800
             },
             title:{
               text:"",
